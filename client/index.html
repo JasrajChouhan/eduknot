@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/user.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Eduknot</title>
+  </head>
+  <body>
+    <div id="root">
+     
+    </div>
+    <div id="progressBar" class = "bg-indigo-500"></div>
+    <script>
+      document.addEventListener('scroll', () => {
+  
+  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+  
+  const scrollPercent = (window.scrollY/ (scrollHeight - clientHeight)) * 100;
+  // client height is the height taken by the content that is visible 
+  // scroll height is the total height scrolled by the scroller
+  // Scroll Y is the PX scroller has covered in total in Y
+  
+  document.getElementById('progressBar').style.width = scrollPercent + '%';
+});
+
+      </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
